@@ -1,0 +1,60 @@
+# We're using version 3.7 of the Docker Compose file format
+version: "3.7"
+
+# Define services/containers
+services: 
+  web: 
+    image: pha-apache:5.4r3
+    restart: always
+    volumes: 
+      - ./volumes/deploy:/app
+      - ./volumes/apache/fpm:/opt/docker/etc/php/fpm
+      - ./volumes/apache/httpd:/opt/docker/etc/httpd
+      - ./volumes/cms:/cms
+      - ./volumes/sessions:/sessions
+      - ./volumes/shared:/shared
+    ports:
+      - "80:80"
+    networks:
+      - my-network 
+  # MySQL container
+  mysql: 
+    # Use mysql:5.7 image
+    image: mysql:5.7
+    # Connect to "my-network" network, as defined below
+    restart: always
+    command:
+      --max_allowed_packet=1000M
+      --sql-mode=NO_AUTO_VALUE_ON_ZERO
+    volumes:
+      - .:/code
+      - ./mydb:/var/lib/mysql    
+    networks:
+      - my-network
+    # Pass a list of environment variables to the container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  # phpMyAdmin container
+  phpmyadmin: 
+    # Use phpmyadmin/phpmyadmin:5.0.2 image
+    image: phpmyadmin/phpmyadmin:5.0.2
+    restart: always
+    # Connect to "my-network" network, as defined below
+    networks:
+      - my-network
+    # Map port 8080 on the host to port 80 inside the container
+    # Syntax is: "HOST_PORT:CONTAINER_PORT"
+    ports:
+      - "8080:80"
+    # Pass a list of environment variables to the container
+    environment:
+      PMA_HOST: mysql
+    # Wait for "mysql" container to start first
+    depends_on:
+      - mysql
+
+# Define networks
+networks:
+  my-network:
+
