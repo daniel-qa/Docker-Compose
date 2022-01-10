@@ -7,7 +7,7 @@ services:
     image:  php:7.1-apache
     restart: always
     volumes: 
-      - ./volumes/app:/app
+      - ./volumes/html:/var/www/html
     ports:
       - "80:80"
     networks:
