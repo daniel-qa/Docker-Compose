@@ -6,6 +6,8 @@ services:
   web: 
     image:  php:7.1-apache
     restart: always
+    volumes: 
+      - ./volumes/app:/app
     ports:
       - "80:80"
     networks:
