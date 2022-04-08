@@ -7,6 +7,6 @@ docker-compose exec httpd /bin/bash -c "apt-get update && apt-get -y install nan
 # Use Docker RUN command, Install Software
 
 For Ubuntu:
-'
-RUN apt-get update && apt-get -y install nano vim && apt-get autoremove
-'
+
+> RUN apt-get update && apt-get -y install nano vim && apt-get autoremove
+
