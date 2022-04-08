@@ -1,0 +1,17 @@
+volumes:
+  - ./www:/var/www/html
+command: sh -c "
+		cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini &&
+		chmod -R 777 /usr/local/etc/php &&
+		pear config-set php_ini /usr/local/etc/php &&
+		apt-get update && 
+		
+		apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev &&
+		docker-php-ext-configure gd --with-freetype --with-jpeg &&
+		docker-php-ext-install gd &&
+		
+		docker-php-ext-install mysqli pdo pdo_mysql &&
+		
+		pecl install xdebug &&
+		docker-php-ext-enable xdebug
+		"
