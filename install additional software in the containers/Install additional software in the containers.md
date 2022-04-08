@@ -4,7 +4,7 @@
 ## After Contain Startin, Use docker-compose exec install Software 
 > docker-compose exec httpd /bin/bash -c "apt-get update && apt-get -y install nano"
 
-## Use Docker RUN command, Install Software
+## Use Docker File RUN command, Install Software
 
 * For Ubuntu:
 
