@@ -1,6 +1,9 @@
-volumes:
-  - ./www:/var/www/html
-command: sh -c "
+services:
+  webapp:
+    build: ./dir
+    volumes:
+      - ./www:/var/www/html
+    command: sh -c "
 		cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini &&
 		chmod -R 777 /usr/local/etc/php &&
 		pear config-set php_ini /usr/local/etc/php &&
