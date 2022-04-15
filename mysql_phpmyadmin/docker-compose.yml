@@ -7,6 +7,12 @@ services:
   mysql:
     # Use mysql:8.0.19 image
     image: mysql:8.0.19
+    # Volume
+    volumes:
+      - ./mydb:/var/lib/mysql      
+    command:
+      --max_allowed_packet=1000M
+      --sql-mode=NO_AUTO_VALUE_ON_ZERO  
     # Connect to "my-network" network, as defined below
     networks:
       - my-network
@@ -28,6 +34,7 @@ services:
     # Pass a list of environment variables to the container
     environment:
       PMA_HOST: mysql
+      UPLOAD_LIMIT: 1600M  
     # Wait for "mysql" container to start first
     depends_on:
       - mysql
