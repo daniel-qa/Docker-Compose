@@ -9,7 +9,8 @@ services:
     image: mysql:8.0.19
     # Volume
     volumes:
-      - ./mydb:/var/lib/mysql      
+      - ./mydb:/var/lib/mysql   
+      #- ./conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
     command:
       --max_allowed_packet=1000M
       --sql-mode=NO_AUTO_VALUE_ON_ZERO  
