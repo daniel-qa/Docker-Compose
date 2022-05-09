@@ -13,7 +13,8 @@ services:
       #- ./conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
     command:
       --max_allowed_packet=1000M
-      --sql-mode=NO_AUTO_VALUE_ON_ZERO  
+      --sql-mode=NO_AUTO_VALUE_ON_ZERO
+      #--local-infile = 1來修改許可權是的可以載入本地檔案。local-infile = 0 則禁止
       #--secure_file_priv = ''：不做任何限制，可以隨意的 Import 或 Export。
     # Connect to "my-network" network, as defined below
     networks:
