@@ -14,11 +14,20 @@ networks:
 
 ## 固定 IP
 ```
-# Define networks
+version: '2'
+services:
+   nginx:
+      image: nginx:1.13.12
+      container_name: nginx
+      restart: always
+      networks:
+         extnetwork:
+            ipv4_address: 172.19.0.2
+ 
 networks:
-  njty-network: 
-    ipam: 
-      driver: default
-      config: 
-        - subnet: "172.20.0.0/24"
+   extnetwork:
+      ipam:
+         config:
+         - subnet: 172.19.0.0/16
+           gateway: 172.19.0.1
 ```
