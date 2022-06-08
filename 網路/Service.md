@@ -10,3 +10,15 @@
 networks:
   my-network:  
 ```  
+
+
+## 單定 IP
+```
+# Define networks
+networks:
+  njty-network: 
+    ipam: 
+      driver: default
+      config: 
+        - subnet: "172.20.0.0/24"
+```
