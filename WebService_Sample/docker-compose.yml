@@ -56,6 +56,8 @@ services:
     # Wait for "mysql" container to start first
     depends_on:
       - mysql
+      
+  # R Service    
   rnresq:
     image: r-base:r6
     restart: always
@@ -68,6 +70,19 @@ services:
       - "2222:22"
     networks:
       - njty-network
+      
+  # ADAS Service     
+  adas:
+    image: adas:v2
+    restart: always
+    command: /start.sh
+    tty: true
+    volumes:
+      - /opt/dockerfile/ies_pod_main/volumes/adas/lampp:/opt/lampp
+      - /opt/dockerfile/ies_pod_main/volumes/adas/www:/home/adas2/www
+      - /softdata/shared_main/Field/ADAS:/home/adas2/pdf
+    networks:
+      - njty-network      
 
 # Define networks
 networks:
