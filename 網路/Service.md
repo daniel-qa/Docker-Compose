@@ -12,7 +12,7 @@ networks:
 ```  
 
 
-## 單定 IP
+## 固定 IP
 ```
 # Define networks
 networks:
