@@ -25,3 +25,14 @@ services:
     volumes:
       - '../honeyfund:/var/www/html'
 ```
+* 範例2
+``
+networks:
+  Mynetwork:
+      driver: bridge
+      ipam:
+          driver: default
+          config:
+              - subnet: "192.168.0.0/24"
+                gateway: "192.168.0.1"
+```
