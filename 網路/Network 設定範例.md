@@ -1,7 +1,13 @@
 * Subnet
 <img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/getway.png?raw=true" >
+```
+16 是指8 bit, 為 2個byte 數，是指前面固定不變的部分
+如果是 24 則為下面的形式
 
-16，是指8 bit, 為 2個byte 數，是指前面固定不變的部分
+ - subnet: 192.168.55.0/24
+   gateway: 192.168.55.1
+
+```
 
 * 範例 1
 ```
