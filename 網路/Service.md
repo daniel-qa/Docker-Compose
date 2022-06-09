@@ -31,7 +31,7 @@ networks:
          - subnet: 172.19.0.0/16
            gateway: 172.19.0.1
 ```
-> extnetwork是自定義的網路名稱
+> **extnetwork:** 是自定義的網路名稱
 
 
 * gateway 的格式，應該是   xx.xx.0.1 的格式，前面與容器 IP 相同
