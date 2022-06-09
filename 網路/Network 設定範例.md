@@ -1,3 +1,8 @@
+* Subnet
+<img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/getway.png?raw=true" >
+
+byte 數，是指前面固定不變的部分
+
 * 範例 1
 ```
 networks:
@@ -36,5 +41,4 @@ networks:
               - subnet: "192.168.0.0/24"
                 gateway: "192.168.0.1"
 ```
-* 範例3
-<img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/getway.png?raw=true" >
+
