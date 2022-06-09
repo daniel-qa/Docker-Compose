@@ -1,3 +1,4 @@
+```
 networks:
   mynet:
     driver: bridge
@@ -22,3 +23,4 @@ services:
       - '443:443'
     volumes:
       - '../honeyfund:/var/www/html'
+```
