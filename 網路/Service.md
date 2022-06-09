@@ -33,5 +33,5 @@ networks:
 ```
 
 
-* gateway的格式，應該是   xx.xx.0.1 的格式，前面與容器 IP 相同
+* gateway 的格式，應該是   xx.xx.0.1 的格式，前面與容器 IP 相同
 * subnet，則是 xx.xx.0.0/16 的格式，前面與容器 IP 相同
