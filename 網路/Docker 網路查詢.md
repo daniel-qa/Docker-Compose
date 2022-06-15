@@ -31,3 +31,17 @@ overlay： container 之間可以在不同的實體機器上做連線，
          例如 Host1 有一個 container1，然後 Host2 有一個 container2，container1 就可以使用 overlay 的網路模式和 container2 做網路的連線。
 
 ```
+
+
+* 關於網路重啟
+```
+
+sudo service network-manager restart
+或者在最近的 Ubuntu 版本上：
+
+sudo systemctl restart systemd-networkd
+反而。
+
+Ubuntu 使用網絡管理器而不是傳統的 Linux 網絡模型。所以你應該重新啟動network-manager服務而不是network服務。或使用 ifup/down。
+
+```
