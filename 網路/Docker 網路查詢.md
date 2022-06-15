@@ -7,6 +7,8 @@ docker network prune	      // Remove all unused networks
 docker network rm	          //Remove one or more networks
 ```
 
+/etc/init.d/networking restart  # 網路重啟
+
 * 網路模式
 ```
 在執行 docker run 指令時，有一個參數是 --net，它可以設定在執行 Docker Container 是要使用哪一種的網路模式，
