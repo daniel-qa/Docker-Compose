@@ -8,7 +8,10 @@ docker network rm	          //Remove one or more networks
 ```
 
 ```
-在執行 docker run 指令時，有一個參數是 --net，它可以設定在執行 Docker Container 是要使用哪一種的網路模式，目前所知道的網路模式有 none、container、host、bridge、overlay… 等等的模式，它們是透過使用 Linux 的 libnetwork 所建立出來的網路模式，以下分別說明這些網路模式：
+在執行 docker run 指令時，有一個參數是 --net，它可以設定在執行 Docker Container 是要使用哪一種的網路模式，
+目前所知道的網路模式有 none、container、host、bridge、overlay… 等等的模式，
+它們是透過使用 Linux 的 libnetwork 所建立出來的網路模式，
+以下分別說明這些網路模式：
 
 none： 在執行 container 時，網路功能是關閉的，所以無法與此 container 連線
 
