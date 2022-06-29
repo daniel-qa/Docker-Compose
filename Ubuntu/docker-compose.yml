@@ -4,3 +4,13 @@ services:
     myos:
       image: ubuntu:16.04
       tty : true
+
+
+# 進階用法
+
+##### 綁定單一檔案
+#  volumes:
+#      - type: bind
+#        source: ./config/master.cnf
+#        target: /etc/mysql/conf.d/master.cnf
+
