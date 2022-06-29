@@ -1,6 +1,6 @@
-# Dockerfile 
+# Dockerfile
 
-##　Basic Syntax
+## Basic Syntax
 
 ```
 FROM : 建立 image 的 基底image 名稱，可指定版號
@@ -14,7 +14,7 @@ CMD : Container 啟動階段時指定執行命令，僅能執行一次次
 
 ```
 
-##　Build
+## Build
 
 ```
 利用 docker build command 將 Dockerfile 實體化成 image。
