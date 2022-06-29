@@ -1,0 +1,12 @@
+version: "3.7"
+
+# Define services/containers
+services:
+    myos:
+      build:
+        context: ./dockerfile
+      networks:
+        - ubuntu-network
+
+networks:
+    ubuntu-network:
