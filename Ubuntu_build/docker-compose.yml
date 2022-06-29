@@ -2,6 +2,6 @@ version: "3.7"
 
 services:
     myos:
-      # image: "ubuntu:16.04"
+      # image: ubuntu:16.04
       build : .
       tty: true
