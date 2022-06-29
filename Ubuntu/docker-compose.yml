@@ -1,11 +1,11 @@
 version: "3.7"
 
-# Define services/containers
 services:
     myos:
-      build: .
-      networks:
-        - ubuntu-network
+      image: ubuntu:16.04      
+      
+#      networks:
+#        - ubuntu-network
 
-networks:
-    ubuntu-network:
+# networks:
+#    ubuntu-network:
