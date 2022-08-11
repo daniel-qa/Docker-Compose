@@ -1,0 +1,44 @@
+ersion: '3.8'
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+
+services:
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+      - "../projects:/var/www"
+    depends_on:
+      - php-fpm
+    networks:
+      - frontend
+      - backend
+
+  php-fpm:
+    build: ./php-fpm
+    container_name: php-fpm
+    ports:
+      - 9000:9000
+    volumes:
+      - "../projects:/var/www"
+    networks:
+      - backend
+
+  phpmyadmin:
+    build: ./phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 8081:80
+    networks:
+      - frontend
+      - backend
+
