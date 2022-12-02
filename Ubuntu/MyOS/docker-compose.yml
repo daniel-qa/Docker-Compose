@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+    myos:
+      image: ubuntu:20.04
+      tty: true
+
+      volumes:
+        - ./workdir:/opt
