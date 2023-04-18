@@ -48,6 +48,10 @@ backend 可以訪問 database。
 就是我們在 **Docker file 中的 ports: 或 docker run -p 設定 publish。同時， Network Address Translation(NAT) 也會自動設定內外部 network 的轉換。**
 
 
+<img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/docker-network2.png?raw=true" >
+
+
+
 
 ***
 ## Docker-compose 使用外部網路
