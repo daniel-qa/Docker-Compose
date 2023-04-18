@@ -18,8 +18,25 @@ https://ithelp.ithome.com.tw/articles/10206725
 子網路的主機可以互相通訊。 16 是指 16 bits 的子網路遮罩 255.255.0.0。
 ```
 
+### Container 間如何通訊： Container <-> Container
+
+Container 間的通訊有幾個方法：
+
+* 1 .用 service/container name：直接寫 serivce name/container。
+
+就如同前面寫的
+```
+backend:
+        …略
+        environment:
+            PORT: 3001
+            NODE_ENV: "development"
+            MONGODB_URL: "mongodb://database:27017"
+backend 可以訪問 database。
+```
 
 
+***
 ## Docker-compose 使用外部網路
 
 
