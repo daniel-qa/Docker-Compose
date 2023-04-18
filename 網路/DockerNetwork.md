@@ -57,6 +57,43 @@ backend 可以訪問 database。
 外界不會發現內部的網路。
 
 
+
+## Host mode
+
+這是最簡單的模式，直接想成 container 執行在 HOST 的 process，它監聽什麼 port ， HOST 什麼 port 就會被使用，連 --publish/-p 都不用了。
+
+這模式的通訊比較簡單，不像 bridge mode 複雜。127.0.0.1 就是指 HOST，所以每個容器可以用 127.0.0.1:<port> 通訊，與其它的 HOST 服務也是一樣；外界就是用 192.168.0.2。
+```
+version: '2'
+services:
+    database:
+        image: mongo:4.1
+        container_name: mongo4
+        network_mode: "host"
+        volumes:
+            - "./data/mongo/data:/data/db"
+    frontend:
+        image: ithelp/frontend:1.0.0
+        container_name: ithelp.frontend
+        network_mode: "host"
+        volumes:
+            - "./data/nginx/log:/var/log/nginx"
+    backend:
+        image: ithelp/backend:1.0.0
+        container_name: ithelp.backend
+        network_mode: "host"
+        command: >
+            /bin/bash -c "
+            sleep 15;
+            npm run start;"
+        environment:
+            PORT: 3001
+            NODE_ENV: "development"
+            MONGODB_URL: "mongodb://127.0.0.1:27017"
+```
+        
+<img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/docker-network4.png?raw=true">        
+        
 ***
 ## Docker-compose 使用外部網路
 
