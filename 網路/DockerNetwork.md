@@ -95,10 +95,10 @@ services:
 <img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/docker-network4.png?raw=true">        
 
         
-#　Docker Network mode 小總結
+# Docker Network mode 小總結
         
 我們介紹了 Bridge mode、Host mode，它們有各自的特色：
-'''
+```
 *　bridge mode:
 
 高彈性的網路設定
@@ -113,7 +113,7 @@ services:
 用起來設定簡單
 容器、 HOST 、外界容易通訊        
    
-'''
+```
         
 ***
 ## Docker-compose 使用外部網路
