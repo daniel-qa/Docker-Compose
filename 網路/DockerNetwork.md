@@ -35,10 +35,10 @@ backend:
 backend 可以訪問 database。
 ```
 * 2 用 IP: 我們也可以直接指定 IP。
-* 
+
 指令 **docker network inspect ithelp-30dayfullstack-day30_default 可以查詢「接上此 network 的 container 資訊」**
 
-ithelp-30dayfullstack-day30_default 有三個容器及它們配置的 IP。另外還有 gateway 和 subnet。
+**ithelp-30dayfullstack-day30_default 有三個容器及它們配置的 IP。另外還有 gateway 和 subnet。**
 
 ***
 ## Docker-compose 使用外部網路
