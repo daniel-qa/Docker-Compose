@@ -93,6 +93,27 @@ services:
 ```
         
 <img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/docker-network4.png?raw=true">        
+
+        
+#　Docker Network mode 小總結
+        
+我們介紹了 Bridge mode、Host mode，它們有各自的特色：
+'''
+*　bridge mode:
+
+高彈性的網路設定
+不同容器間的 port 號可以一樣，因為容器有自己的 IP
+可以降低 HOST port 相衝的可能
+用起來設定複雜
+容器、 HOST 、外界不容易通訊
+
+* Host mode：
+
+容易與 HOST port 、容器 port 的相衝、
+用起來設定簡單
+容器、 HOST 、外界容易通訊        
+   
+'''
         
 ***
 ## Docker-compose 使用外部網路
