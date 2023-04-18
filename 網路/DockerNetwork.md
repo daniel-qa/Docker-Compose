@@ -32,8 +32,9 @@ backend:
             PORT: 3001
             NODE_ENV: "development"
             MONGODB_URL: "mongodb://database:27017"
-backend 可以訪問 database。
 ```
+backend 可以訪問 database。
+
 * 2 用 IP: 我們也可以直接指定 IP。
 
 指令 **docker network inspect ithelp-30dayfullstack-day30_default 可以查詢「接上此 network 的 container 資訊」**
