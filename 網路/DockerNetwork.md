@@ -41,6 +41,14 @@ backend 可以訪問 database。
 
 **ithelp-30dayfullstack-day30_default 有三個容器及它們配置的 IP。另外還有 gateway 和 subnet。**
 
+
+### 外界(NET-0)如何存取 container： 外界(NET-0) -> Container
+
+若外界 192.168.0.5 要訪問我們的主機 192.168.0.2:80 的 ithelp.front 服務，我們要設定 --publish/-p。
+就是我們在 **Docker file 中的 ports: 或 docker run -p 設定 publish。同時， Network Address Translation(NAT) 也會自動設定內外部 network 的轉換。**
+
+
+
 ***
 ## Docker-compose 使用外部網路
 
