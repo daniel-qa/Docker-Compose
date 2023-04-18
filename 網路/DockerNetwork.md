@@ -1,6 +1,11 @@
 
 https://ithelp.ithome.com.tw/articles/10206725
 
+# Docker Network mode
+
+## Bridge mode
+這是 Docker Compose 預設的網路模式，所有有 service 預設 network_mode: 都是 bridge (見 network_mode)。**當我們 docker-compose up 時，會建立一個名為 <dir_name>_default 的 network 出來，所有 bridge mode 的 container 會自己配網路卡並接上那個預設的 network**。
+
 <img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/docker_network.png?raw=true" >
 
 172.28.0.0/16 是指一網路的網段從 172.28.0.1 ~ 172.28.255.255，子網路的主機可以互相通訊。 16 是指 16 bits 的子網路遮罩 255.255.0.0。
