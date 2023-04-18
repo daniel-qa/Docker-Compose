@@ -30,4 +30,4 @@ https://ithelp.ithome.com.tw/articles/10206725
 $ docker-compose up
 ERROR: Network my_network declared as external, but could be found. Please create the network manually using `docker network create my_network` and try again.
 ```
-如果找不到此 network，可以執行 docker network create [network_name] 來建立 network。
+如果找不到此 network，可以執行 **docker network create [network_name]** 來建立 network。
