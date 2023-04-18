@@ -54,6 +54,7 @@ backend 可以訪問 database。
 
 <img src="https://github.com/daniel-qa/Docker-Compose/blob/main/%E7%B6%B2%E8%B7%AF/docker-network3.png?raw=true">
 
+外界不會發現內部的網路。
 
 
 ***
